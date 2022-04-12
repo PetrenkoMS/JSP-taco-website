@@ -1,19 +1,33 @@
 window.onload = function() {
     var producti = new Array();
+    var allprod = new Array();
     $.ajax({
         type: "GET",
         url: "/prbasket",
         success: function(result){
-            producti = result.split(';');
+            withAllPrice = result.split("|");
+            allprod = withAllPrice[0].split("%");
+            producti = allprod[0].split(';');
+            cena = allprod[1].split(";");
+            console.log(allprod);
+            console.log(producti);
             producti.pop();
+            console.log(cena);
             for (let i = 0; i < producti.length; i++){
                 var input = document.createElement("input");
+                var pinput = document.createElement("input");
                 var br = document.createElement("br");
                 var btn = document.createElement("input");
                 input.setAttribute('type', 'text');
                 input.setAttribute("readonly", 'true');
                 input.setAttribute('value', producti[i]);
                 input.className = i +"btn"+" new_inputs" + " forStatus" ;
+
+                pinput.setAttribute('type', 'text');
+                pinput.setAttribute("readonly", 'true');
+                pinput.setAttribute('value', cena[i]);
+                pinput.className = i +"btn"+" new_pinputs";
+
                 btn.setAttribute('type', 'submit');
                 btn.setAttribute('value'," ");
                 btn.className = i + "btn" + " new_btn";
@@ -21,11 +35,12 @@ window.onload = function() {
                 btn.setAttribute("onclick",'deleteProduct(this)');
                 var parent = document.getElementById("spisok_basket");
                 parent.appendChild(input);
+                parent.appendChild(pinput);
                 parent.appendChild(btn);
                 parent.appendChild(br);
 
             }
-            //$('#tovar').val(result);   //div поставить. val заменить на html
+            document.getElementById("sum_pay").value = "Итого: " + withAllPrice[1] + " rub";
 
         },
         error: function(){

@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 import java.sql.*;
@@ -20,13 +21,24 @@ public class Zakaz extends HttpServlet  {
 //            System.out.println("s: "+s);
 //        }
 
+
         String[] s = req.getReader().lines().collect(Collectors.joining()).split(",");
         String words = String.join(", ", s);
+        String word1 = "";
+        int pay1 = 0;
         for (String word : s) {
             System.out.println(word);
+            String[] pay = word.split("%");
+            word1= word1 + pay[0] + ", ";
+            pay1 = pay1 + Integer.parseInt(pay[1]);
 
         }
+        word1= word1.substring(0,word1.length()-2);
         System.out.println(words);
+        System.out.println("!!!!!!!!!!!!!!");
+        System.out.println(word1);
+        System.out.println(pay1);
+
 
 //        JavaToMySQL toDB = new JavaToMySQL();
 //        try {
@@ -52,15 +64,15 @@ public class Zakaz extends HttpServlet  {
         try (Connection connection = DriverManager.getConnection(connectionUrl, userName, password);
              Statement statement = connection.createStatement()) {
             System.out.println("Connect!");
-            System.out.println(s[0]);
-            System.out.println(words.length());
+
 //            запись
             PreparedStatement pstmt = null;
             pstmt = connection.prepareStatement(
-                    "INSERT INTO product (user_name, product, status) values(?, ?, ?)");
+                    "INSERT INTO product (user_name, product, status, price) values(?, ?, ?, ?)");
             pstmt.setString(1, "Mikhail");
-            pstmt.setString(2, words);
+            pstmt.setString(2, word1);
             pstmt.setInt(3, 1);
+            pstmt.setInt(4, pay1);
             pstmt.executeUpdate();
 //            statement.executeUpdate("insert into product (user_name, product, status) value('Mikhail'," + words + ", 1)");
 //            statement.executeUpdate("insert into product (user_name, product, status) value('Mikhail', 'some tasty' , 1)");

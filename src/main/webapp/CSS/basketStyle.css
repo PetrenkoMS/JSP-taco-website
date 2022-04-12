@@ -70,7 +70,12 @@ body {
 
 .new_inputs {
     margin-top: 10px;
-    width: 90%;
+    width: 40%;
+}
+
+.new_pinputs {
+    margin-top: 10px;
+    width: 20%;
 }
 
 .new_btn {
@@ -92,4 +97,9 @@ body {
 .payNowBtn {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.sum_pay {
+    margin-bottom: 5px;
+    text-align:center;
 }

@@ -13,27 +13,23 @@
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-    <script src="../js/ingr.js"></script>
+
 
 
 
 
     <script>
 
-        jQuery(function($) {
+    jQuery(function($) {
         var $text = $('#text_input'), $box = $('.prod');
-
         $box.on('click change', function() {
             var values = [];
-
             $box.filter(':checked').each(function() {
                 values.push(this.value);
             });
-
             $text.val(values.join(','));
-
-            });
         });
+    });
 
 
 
@@ -75,6 +71,8 @@
                     <p> Здесь Вы можете выбрать ингредиенты для Вашего тако.
                     Для этого просто поставьте галочку напротив нужного ингредиента.
                     Помните, при выборе большого количества ингредиентов, их общее количество в тако уменьшается.
+                    Все ценный указаны в рублях (rub).
+                    Цена на все виды тортилий одинаковые -- <b style="font-size:18px"> 50 рублей </b>.
                     После выбора ингредиентов нажмите на кнопку "Добавить в заказ".
                     Затем в меню нажмите на "Корзина" для того, чтобы оформить заказ. </p>
             </div>
@@ -86,15 +84,16 @@
 
             <fieldset>
                 <legend>В какой тортилье делать?</legend>
-                <input type="radio" name="tortilia" id="corn" value="Kykyryznaya tortilla" class="prod" checked> Кукурузная тортилья
+                <input type="radio" name="tortilia" id="corn" value="Kykyryznaya tortilla%50" class="prod" checked> Кукурузная тортилья
                 <br>
-                <input type="radio" name="tortilia" id="wheat" value="Wheat tortilla" class="prod"> Пшеничная тортилья
+                <input type="radio" name="tortilia" id="wheat" value="Wheat tortilla%50" class="prod"> Пшеничная тортилья
             </fieldset>
 
 
             <div class="divider"></div>
 
-            <input type="hidden" id="text_input" name="text_input"  />
+            <input  id="text_input" name="text_input" type="hidden" />
+
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-4">
@@ -102,55 +101,68 @@
 
                         <tr>
                            <td> Курица </td>
-                           <td> <input type="checkbox" name="choice" id="chicken" value="Chicken" class="prod"> </td>
+                           <td> <input type="text" name="pchoice" id="pchicken"  class="pprod" value="100rub" readonly> </td>
+                           <td> <input type="checkbox" name="choice" id="chicken" value="Chicken%100" class="prod"> </td>
                         </tr>
                         <tr>
                            <td>  Говядина (стейк) </td>
-                           <td><input type="checkbox" name="choice" id="beef" value="Steak beef" class="prod" ></td>
+                           <td><input type="text" name="pchoice" id="pbeef" value="200rub" class="pprod" readonly></td>
+                           <td><input type="checkbox" name="choice" id="beef" value="Steak beef%200" class="prod" ></td>
                         </tr>
                         <tr>
                            <td>  Свинина (стейк) </td>
-                           <td><input type="checkbox" name="choice" id="pig" value="Steak pig" class="prod" ></td>
+                           <td><input type="text" name="pchoice" id="ppig" value="150rub" class="pprod" readonly></td>
+                           <td><input type="checkbox" name="choice" id="pig" value="Steak pig%150" class="prod" ></td>
                         </tr>
                         <tr>
                            <td>  Говядина (фарш) </td>
-                           <td><input type="checkbox" name="choice" id="beef_f" value="Mince beef" class="prod"></td>
+                           <td><input type="text" name="pchoice" id="pbeef_f" value="180rub" class="pprod" readonly></td>
+                           <td><input type="checkbox" name="choice" id="beef_f" value="Mince beef%180" class="prod"></td>
                         </tr>
                         <tr>
                            <td>  Свинина (фарш) </td>
-                           <td><input type="checkbox" name="choice" id="pig_f" value="Mince pig" class="prod"></td>
+                           <td><input type="text" name="pchoice" id="ppig_f" value="140rub" class="pprod" readonly></td>
+                           <td><input type="checkbox" name="choice" id="pig_f" value="Mince pig%140" class="prod"></td>
                         </tr>
                         <tr>
                            <td>  Бекон </td>
-                           <td><input type="checkbox" name="choice" id="bacon" value="Bacon" class="prod"></td>
+                           <td><input type="text" name="pchoice" id="pbacon" value="70rub" class="pprod" readonly></td>
+                           <td><input type="checkbox" name="choice" id="bacon" value="Bacon%70" class="prod"></td>
                         </tr>
                         <tr>
                            <td>  Салат(зеленый) </td>
-                           <td><input type="checkbox" name="choice" id="salad" value="Salad" class="prod"></td>
+                           <td><input type="text" name="pchoice" id="psalad" value="30rub" class="pprod" readonly></td>
+                           <td><input type="checkbox" name="choice" id="salad" value="Salad%30" class="prod"></td>
                         </tr>
                         <tr>
                            <td> Базилик </td>
-                           <td><input type="checkbox" name="choice" id="basil" value="Basil" class="prod"></td>
+                           <td><input type="text" name="pchoice" id="pbasil" value="35rub" class="pprod" readonly></td>
+                           <td><input type="checkbox" name="choice" id="basil" value="Basil%35" class="prod"></td>
                         </tr>
                         <tr>
                            <td>  Петрушка </td>
-                           <td><input type="checkbox" name="choice" id="parsley" value="Parsley" class="prod"></td>
+                           <td><input type="text" name="pchoice" id="pparsley" value="15rub" class="pprod" readonly></td>
+                           <td><input type="checkbox" name="choice" id="parsley" value="Parsley%15" class="prod"></td>
                         </tr>
                         <tr>
                            <td>  Укроп </td>
-                           <td><input type="checkbox" name="choice" id="dill" value="Dill" class="prod"></td>
+                           <td><input type="text" name="pchoice" id="pdill" value="15rub" class="pprod" readonly></td>
+                           <td><input type="checkbox" name="choice" id="dill" value="Dill%15" class="prod"></td>
                         </tr>
                         <tr>
                            <td>  Огурец </td>
-                           <td><input type="checkbox" name="choice" id="cucumber" value="Cucumber" class="prod"></td>
+                           <td><input type="text" name="pchoice" id="pcucumber" value="25rub" class="pprod" readonly></td>
+                           <td><input type="checkbox" name="choice" id="cucumber" value="Cucumber%25" class="prod"></td>
                         </tr>
                         <tr>
                            <td>  Маринованный огурец </td>
-                           <td><input type="checkbox" name="choice" id="cucumber_m" value="Pickled cucumber" class="prod"></td>
+                           <td><input type="text" name="pchoice" id="pcucumber_m" value="30rub" class="pprod" readonly></td>
+                           <td><input type="checkbox" name="choice" id="cucumber_m" value="Pickled cucumber%30" class="prod"></td>
                         </tr>
                         <tr>
                            <td>  Помидор </td>
-                           <td><input type="checkbox" name="choice" id="tomato" value="Tomato" class="prod"></td>
+                           <td><input type="text" name="pchoice" id="ptomato" value="25rub" class="pprod" readonly></td>
+                           <td><input type="checkbox" name="choice" id="tomato" value="Tomato%25" class="prod"></td>
                         </tr>
 
                     </table>
@@ -161,55 +173,68 @@
                     <table border="2" cellspacing="0" cellpadding="2" width="100%" align="center" class="spisok">
                         <tr>
                            <td>Сыр</td>
-                           <td><input type="checkbox" name="choice" id="cheese" value="Cheese" class="prod"></td>
+                           <td><input type="text" name="pchoice" id="pcheese" value="25rub" class="pprod"></td>
+                           <td><input type="checkbox" name="choice" id="cheese" value="Cheese%25" class="prod"></td>
                         </tr>
                         <tr>
                             <td>Лук (репчатый)</td>
-                            <td><input type="checkbox" name="choice" id="onion" value="Onion" class="prod"></td>
+                            <td><input type="text" name="pchoice" id="ponion" value="15rub" class="pprod"></td>
+                            <td><input type="checkbox" name="choice" id="onion" value="Onion%15" class="prod"></td>
                         </tr>
                         <tr>
                             <td>Лук (зеленый)</td>
-                            <td><input type="checkbox" name="choice" id="s_onion" value="String onion" class="prod"></td>
+                            <td><input type="text" name="pchoice" id="ps_onion" value="10rub" class="pprod"></td>
+                            <td><input type="checkbox" name="choice" id="s_onion" value="String onion%10" class="prod"></td>
                         </tr>
                         <tr>
                             <td>Болгарский перец</td>
-                            <td><input type="checkbox" name="choice" id="pepper_b" value="Bulg pepper" class="prod"></td>
+                            <td><input type="text" name="pchoice" id="ppepper_b" value="30rub" class="pprod"></td>
+                            <td><input type="checkbox" name="choice" id="pepper_b" value="Bulg pepper%30" class="prod"></td>
                         </tr>
                         <tr>
                             <td>Перец чили</td>
-                            <td><input type="checkbox" name="choice" id="pepper_c" value="Chili pepper" class="prod"></td>
+                            <td><input type="text" name="pchoice" id="ppepper_c" value="30rub" class="pprod"></td>
+                            <td><input type="checkbox" name="choice" id="pepper_c" value="Chili pepper%30" class="prod"></td>
                         </tr>
                         <tr>
                             <td>Перец каролинский жнец</td>
-                            <td><input type="checkbox" name="choice" id="pepper_k" value="Very hot pepper" class="prod"></td>
+                            <td><input type="text" name="pchoice" id="ppepper_k" value="35rub" class="pprod"></td>
+                            <td><input type="checkbox" name="choice" id="pepper_k" value="Very hot pepper%35" class="prod"></td>
                         </tr>
                         <tr>
                             <td>Фасоль</td>
-                            <td><input type="checkbox" name="choice" id="bean" value="Bean" class="prod"></td>
+                            <td><input type="text" name="pchoice" id="pbean" value="17rub" class="pprod"></td>
+                            <td><input type="checkbox" name="choice" id="bean" value="Bean%17" class="prod"></td>
                         </tr>
                         <tr>
                             <td>Кинза</td>
-                            <td><input type="checkbox" name="choice" id="kinza" value="Kinza" class="prod"></td>
+                            <td><input type="text" name="pchoice" id="pkinza" value="16rub" class="pprod"></td>
+                            <td><input type="checkbox" name="choice" id="kinza" value="Kinza%16" class="prod"></td>
                         </tr>
                         <tr>
                             <td>Чеснок</td>
-                            <td><input type="checkbox" name="choice" id="garlic" value="Garlic" class="prod"></td>
+                            <td><input type="text" name="pchoice" id="pgarlic" value="18rub" class="pprod"></td>
+                            <td><input type="checkbox" name="choice" id="garlic" value="Garlic%18" class="prod"></td>
                         </tr>
                         <tr>
                             <td>Имбирь</td>
-                            <td><input type="checkbox" name="choice" id="ginger" value="Ginger" class="prod"> </td>
+                            <td><input type="text" name="pchoice" id="pginger" value="21rub" class="pprod"> </td>
+                            <td><input type="checkbox" name="choice" id="ginger" value="Ginger%21" class="prod"> </td>
                         </tr>
                         <tr>
                             <td>Ананас</td>
-                            <td><input type="checkbox" name="choice" id="pineapple" value="Pineapple" class="prod"></td>
+                            <td><input type="text" name="pchoice" id="ppineapple" value="65rub" class="pprod"></td>
+                            <td><input type="checkbox" name="choice" id="pineapple" value="Pineapple%65" class="prod"></td>
                         </tr>
                         <tr>
                             <td>Картошка</td>
-                            <td><input type="checkbox" name="choice" id="potato" value="Potato" class="prod"></td>
+                            <td><input type="text" name="pchoice" id="ppotato" value="25rub" class="pprod"></td>
+                            <td><input type="checkbox" name="choice" id="potato" value="Potato%25" class="prod"></td>
                         </tr>
                         <tr>
                             <td>Авокадо</td>
-                            <td><input type="checkbox" name="choice" id="avocado" value="Avocado" class="prod"></td>
+                            <td><input type="text" name="pchoice" id="pavocado" value="45rub" class="pprod"></td>
+                            <td><input type="checkbox" name="choice" id="avocado" value="Avocado%45" class="prod"></td>
                         </tr>
 
                     </table>
@@ -234,7 +259,7 @@
 
 
 
-
+    <script src="../js/ingr.js"></script>
     <script src="../js/js/bootstrap.js"></script>
 
 </body>

@@ -99,8 +99,8 @@
             </div>
             <div class="row">
                 <div class="col-5"></div>
-                <div class="col-2">
-
+                <div class="col-2" style="text-align:center;">
+                    <input id="sum_pay" type="text" readonly="true" class="sum_pay">
                     <input id="pay" type="submit" value="Оплатить" onclick="pay()" style="display:block;" class="list-group-item list-group-item-success btn btn-large btn-success">
 
                 </div>
