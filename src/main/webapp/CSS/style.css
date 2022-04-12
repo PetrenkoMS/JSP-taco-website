@@ -1,0 +1,28 @@
+body {
+    background-image: url("../img/фон тако.png");
+}
+
+@font-face {
+    font-family: logo;
+    src: url("../Fonts/logo.ttf");
+}
+
+.logotip::first-letter{
+    font-family: logo;
+    font-size:160%;
+    padding-right:7px;
+}
+.logotip{
+    color:black;
+    font-size:32px;
+    font-weight:bold;
+    background-color: #ED760E;
+    padding-right:10px;
+}
+
+
+.navi {
+    background-color: #FFCF40;
+    margin-bottom: -15px;
+    margin-top: -10px;
+}

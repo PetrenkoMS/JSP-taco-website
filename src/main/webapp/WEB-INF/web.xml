@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!-- add servlet -->
+  <servlet>
+    <servlet-name>add</servlet-name>
+    <servlet-class>app.servlets.AddServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>add</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+
+  <!-- list servlet -->
+  <servlet>
+    <servlet-name>list</servlet-name>
+    <servlet-class>app.servlets.ListServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>list</servlet-name>
+    <url-pattern>/list</url-pattern>
+  </servlet-mapping>
+
+  <!-- logOn servlet-->
+  <servlet>
+    <servlet-name>logOn</servlet-name>
+    <servlet-class>app.servlets.LogOnServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>logOn</servlet-name>
+    <url-pattern>/logOn</url-pattern>
+  </servlet-mapping>
+
+  <!-- catalog servlet -->
+  <servlet>
+    <servlet-name>catalog</servlet-name>
+    <servlet-class>app.servlets.CatalogServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>catalog</servlet-name>
+    <url-pattern>/catalog</url-pattern>
+  </servlet-mapping>
+
+  <!-- basket servlet -->
+  <servlet>
+    <servlet-name>basket</servlet-name>
+    <servlet-class>app.servlets.BasketServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>basket</servlet-name>
+    <url-pattern>/basket</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- zakaz servlet -->
+  <servlet>
+    <servlet-name>zakaz</servlet-name>
+    <servlet-class>app.forDB.Zakaz</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>zakaz</servlet-name>
+    <url-pattern>/zakaz</url-pattern>
+  </servlet-mapping>
+
+  <!-- PrintBasket servlet -->
+  <servlet>
+    <servlet-name>prbasket</servlet-name>
+    <servlet-class>app.forDB.PrintBasket</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>prbasket</servlet-name>
+    <url-pattern>/prbasket</url-pattern>
+  </servlet-mapping>
+
+  <!-- registr servlet -->
+  <servlet>
+    <servlet-name>registr</servlet-name>
+    <servlet-class>app.servlets.ServletRegistration</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>registr</servlet-name>
+    <url-pattern>/registr</url-pattern>
+  </servlet-mapping>
+
+  <!-- delbasket servlet -->
+  <servlet>
+    <servlet-name>delbasket</servlet-name>
+    <servlet-class>app.servlets.ServletDelBasket</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>delbasket</servlet-name>
+    <url-pattern>/delbasket</url-pattern>
+  </servlet-mapping>
+
+</web-app>
