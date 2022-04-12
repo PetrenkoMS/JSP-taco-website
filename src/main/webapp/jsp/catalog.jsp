@@ -54,8 +54,16 @@
                 </ul>
             </div>
 
-            <input type="submit" value="Войти" onclick="location.href='/logOn'" class="list-group-item list-group-item-success btn btn-large btn-success" >
+            <div class="row">
+                <div class="col-8">
+                    <input type="text" readonly="true" class="yourLog" style="display:none; margin-right: 100px">
+                </div>
+                <div class="col-4">
+                    <input type="submit" style="display:none; margin-right: 200px" value="Выйти" onclick="ext()" style="text-align:center" class="list-group-item list-group-item-action list-group-item-primary btn btn-large vixod">
+                    <input type="submit" style="display:block; margin-right: 200px;" value="Войти" onclick="location.href='/logOn'" class="list-group-item list-group-item-success btn btn-large btn-success vxod" >
 
+                </div>
+            </div>
         </div>
     </div>
 

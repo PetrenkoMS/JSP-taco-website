@@ -14,14 +14,6 @@ import java.sql.*;
 public class ServletRegistration extends HttpServlet  {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        Enumeration<String> requestDispatcher = req.getAttributeNames();
-
-
-//        while (requestDispatcher.hasMoreElements()) {
-//            String s = requestDispatcher.nextElement();
-//            System.out.println("s: "+s);
-//        }
-
 
         String[] s = req.getReader().lines().collect(Collectors.joining()).split(",");
         String n_log = s[0];
@@ -32,12 +24,6 @@ public class ServletRegistration extends HttpServlet  {
         System.out.println(n_log);
         System.out.println(n_pass);
 
-//        JavaToMySQL toDB = new JavaToMySQL();
-//        try {
-//            toDB.writeProduct();
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
 
 
         String userName = "root";
@@ -71,10 +57,6 @@ public class ServletRegistration extends HttpServlet  {
             System.out.println(logFlag);
 
             if (logFlag) {
-                ResultSet rs2 = statement.executeQuery("select user_name from user_account where password='123'");
-                while (rs2.next()) {
-                    System.out.println(rs2.getString(1));
-                }
 
 
                 //запись
@@ -89,7 +71,7 @@ public class ServletRegistration extends HttpServlet  {
                 System.out.println("-------------------");
             }
             else {
-                resp.sendError(500,"Такой логин уже есть");
+                resp.sendError(500,"Такой логин уже есть, или Вы использовали особые символы  (< \" \' > , )");
             }
 
 

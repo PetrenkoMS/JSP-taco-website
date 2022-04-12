@@ -13,13 +13,7 @@ import java.sql.*;
 public class Zakaz extends HttpServlet  {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        Enumeration<String> requestDispatcher = req.getAttributeNames();
 
-
-//        while (requestDispatcher.hasMoreElements()) {
-//            String s = requestDispatcher.nextElement();
-//            System.out.println("s: "+s);
-//        }
 
 
         String[] s = req.getReader().lines().collect(Collectors.joining()).split(",");

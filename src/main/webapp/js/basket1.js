@@ -9,10 +9,7 @@ window.onload = function() {
             allprod = withAllPrice[0].split("%");
             producti = allprod[0].split(';');
             cena = allprod[1].split(";");
-            console.log(allprod);
-            console.log(producti);
             producti.pop();
-            console.log(cena);
             for (let i = 0; i < producti.length; i++){
                 var input = document.createElement("input");
                 var pinput = document.createElement("input");

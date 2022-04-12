@@ -114,4 +114,15 @@
     <url-pattern>/status</url-pattern>
   </servlet-mapping>
 
+  <!--inLog servlet -->
+  <servlet>
+    <servlet-name>inLog</servlet-name>
+    <servlet-class>app.forDB.ServletInLog</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>inLog</servlet-name>
+    <url-pattern>/inLog</url-pattern>
+  </servlet-mapping>
+
 </web-app>

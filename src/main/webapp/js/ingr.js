@@ -1,6 +1,5 @@
 function addProducts() {
     var temp = $('#text_input').val();
-    console.log(temp);
     $.ajax({
         type: "POST",
         url: "/zakaz",

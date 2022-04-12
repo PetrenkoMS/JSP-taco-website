@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../CSS/logOnStyle.css">
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="../js/registration.js"> </script>
+
 
    <title>Войти</title>
 </head>
@@ -39,7 +39,7 @@
         </tr>
     </table>
     <div style="margin:10px 50%;">
-        <input type="submit" id="enter" value="Войти">
+        <input type="submit" id="enter" onclick="vhodIn()" value="Войти">
     </div>
 
 
@@ -78,9 +78,8 @@
 
     </div>
 
-
-
-
+    <script src="../js/registration.js"> </script>
+    <script src="../js/vxod.js"></script>
     <script src="../js/js/bootstrap.js"></script>
 </body>
 </html>
