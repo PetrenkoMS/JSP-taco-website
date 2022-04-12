@@ -81,3 +81,15 @@ body {
     height:35px;
     width:35px;
 }
+
+.payNow {
+    margin-left:10%;
+    margin-right:10%;
+    margin-bottom: 10px;
+    border: 2px solid black;
+}
+
+.payNowBtn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

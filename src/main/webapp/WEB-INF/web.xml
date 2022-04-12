@@ -95,12 +95,23 @@
   <!-- delbasket servlet -->
   <servlet>
     <servlet-name>delbasket</servlet-name>
-    <servlet-class>app.servlets.ServletDelBasket</servlet-class>
+    <servlet-class>app.forDB.ServletDelBasket</servlet-class>
   </servlet>
 
   <servlet-mapping>
     <servlet-name>delbasket</servlet-name>
     <url-pattern>/delbasket</url-pattern>
+  </servlet-mapping>
+
+  <!--status servlet -->
+  <servlet>
+    <servlet-name>status</servlet-name>
+    <servlet-class>app.forDB.ServletStatus</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>status</servlet-name>
+    <url-pattern>/status</url-pattern>
   </servlet-mapping>
 
 </web-app>

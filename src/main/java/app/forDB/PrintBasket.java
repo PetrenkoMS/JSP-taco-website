@@ -31,7 +31,14 @@ public class PrintBasket extends HttpServlet {
 
             String prod = "";
             //чтение
-            ResultSet resultSet = statement.executeQuery("select product from product where user_name='Mikhail'");
+//            ResultSet resultSet = statement.executeQuery("select product from product where user_name='Mikhail'");
+
+            PreparedStatement pstmt = null;
+            pstmt = connection.prepareStatement("select product from product where user_name='Mikhail' and status= ? ");
+            pstmt.setInt(1, 1);
+            pstmt.executeQuery();
+            ResultSet resultSet = pstmt.executeQuery();
+
             String all_prod = "";
             while (resultSet.next()) {
                 prod = resultSet.getString("product");

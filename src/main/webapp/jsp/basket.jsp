@@ -73,9 +73,6 @@
 
                         <tr>
 
-
-
-                            <input type="text" id = "tovar" readonly="true">
                             <p id = "info" ></p>
 
                         </tr>
@@ -87,19 +84,25 @@
 
             </div>
             <br>
+            <div id='payInfo' class="payNow" style="display:none;">
+                <p style= "font-weight:bold; font-size:24px;"> Введите данные банковской карты </p>
+                <input type="int" name="card_number" pattern=".{3,}" title="Минимум 3 символа" placeholder="Введите номер карты">
+                <input type="text" name="card_name" pattern=".{3,}" title="Минимум 3 символа" placeholder="Имя владельца">
+                <input type="text" name="time_number" pattern=".{3,}" title="Минимум 3 символа" placeholder="Срок действия">
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-2">
+                        <input id="payNow" type="submit" value="Оплатить" onclick="payNow()" class="list-group-item list-group-item-action list-group-item-primary btn btn-large payNowBtn">
+                    </div>
+                    <div class="col-5"></div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-5"></div>
                 <div class="col-2">
-                    <form action="ServletOplata" method="GET">
-                        <div hidden="true">
-                            <p> Введите данные банковской карты </p> <br>
-                            <input type="int" name="card_number" pattern=".{3,}" title="Минимум 3 символа" placeholder="Введите номер карты">
-                            <input type="text" name="card_name" pattern=".{3,}" title="Минимум 3 символа" placeholder="Имя владельца">
-                            <input type="text" name="time_number" pattern=".{3,}" title="Минимум 3 символа" placeholder="Срок действия">
-                        </div>
 
-                        <input id="pay" type="submit" value="Оплатить" onclick="pay()" class="list-group-item list-group-item-success btn btn-large btn-success">
-                    </form>
+                    <input id="pay" type="submit" value="Оплатить" onclick="pay()" style="display:block;" class="list-group-item list-group-item-success btn btn-large btn-success">
+
                 </div>
                 <div class="col-5"></div>
             </div>
