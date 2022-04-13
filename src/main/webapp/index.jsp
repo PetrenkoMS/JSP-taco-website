@@ -50,12 +50,6 @@
     <br><br><br><br>
     </div>
 
-    <div>       <!-- content -->
-        <div>    <!-- buttons holder -->
-            <button onclick="location.href='/list'">List users</button>
-            <button onclick="location.href='/add'">Add user</button>
-        </div>
-    </div>
 
     <script src="js/main.js"></script>
     <script src="js/vxod.js"></script>
