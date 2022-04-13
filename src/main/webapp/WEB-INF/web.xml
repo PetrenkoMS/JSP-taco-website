@@ -84,7 +84,7 @@
   <!-- registr servlet -->
   <servlet>
     <servlet-name>registr</servlet-name>
-    <servlet-class>app.servlets.ServletRegistration</servlet-class>
+    <servlet-class>app.forDB.ServletRegistration</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -123,6 +123,28 @@
   <servlet-mapping>
     <servlet-name>inLog</servlet-name>
     <url-pattern>/inLog</url-pattern>
+  </servlet-mapping>
+
+  <!--sombrero servlet -->
+  <servlet>
+    <servlet-name>sombrero</servlet-name>
+    <servlet-class>app.servlets.ServletSombrero</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>sombrero</servlet-name>
+    <url-pattern>/sombrero</url-pattern>
+  </servlet-mapping>
+
+  <!--ext servlet -->
+  <servlet>
+    <servlet-name>ext</servlet-name>
+    <servlet-class>app.servlets.ServletExt</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>ext</servlet-name>
+    <url-pattern>/ext</url-pattern>
   </servlet-mapping>
 
 </web-app>

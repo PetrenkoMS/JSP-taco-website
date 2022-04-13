@@ -1,6 +1,7 @@
 package app.forDB;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,6 +9,7 @@ import java.io.IOException;
 import java.sql.*;
 
 
+//Выводит заказы из БД на сайт
 public class PrintBasket extends HttpServlet {
 
     @Override
@@ -16,7 +18,6 @@ public class PrintBasket extends HttpServlet {
         String userName = "root";
         String password = "qwerty123!";
         String connectionUrl = "jdbc:mysql://localhost:3306/taco";
-
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -27,13 +28,27 @@ public class PrintBasket extends HttpServlet {
              Statement statement = connection.createStatement()) {
             System.out.println("Connect to read!");
 
+            Cookie[] cookies = req.getCookies();
+            String cookieUser = "user";
+            Cookie cookieUserValue = null;
+            String user = "";
+            for (Cookie c : cookies) {
+                if (cookieUser.equals(c.getName())) {
+                    cookieUserValue = c;
+                    System.out.println();
+                    System.out.println("user cookie: " + cookieUserValue.getValue());
+                    user = cookieUserValue.getValue();
+                }
+            }
+
             String prod = "";
             //чтение
 //            ResultSet resultSet = statement.executeQuery("select product from product where user_name='Mikhail'");
 
             PreparedStatement pstmt = null;
-            pstmt = connection.prepareStatement("select product, price from product where user_name='Mikhail' and status= ? ");
-            pstmt.setInt(1, 1);
+            pstmt = connection.prepareStatement("select id, product, price from product where user_name= ? and status= ? ");
+            pstmt.setString(1,user);
+            pstmt.setInt(2, 1);
             pstmt.executeQuery();
             ResultSet resultSet = pstmt.executeQuery();
 
@@ -42,7 +57,10 @@ public class PrintBasket extends HttpServlet {
             String price = "";
             String all_price = "";
             String all_prod = "";
+            int id_id = 0;
+            String all_id = "";
             while (resultSet.next()) {
+                id_id = resultSet.getInt("id");
                 prod = resultSet.getString("product");
                 price1 = resultSet.getInt("price");
                 price_sum = price_sum + price1;
@@ -50,11 +68,12 @@ public class PrintBasket extends HttpServlet {
                 all_price = all_price + price + "rub;";
                 System.out.println(prod);
                 all_prod = all_prod + prod + ";";
+                all_id += Integer.toString(id_id) + ";";
             }
 
 //            response.setCharacterEncoding("UTF-8");
 //            response.getWriter().write(prod);
-            String namepr = all_prod + "%" + all_price + "|" + price_sum;
+            String namepr = all_prod + "%" + all_price + "|" + price_sum + "|" + all_id;
             response.getWriter().write(namepr);
 
         } catch (SQLException e) {

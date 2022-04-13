@@ -1,4 +1,4 @@
-package app.servlets;
+package app.forDB;
 
 import org.w3c.dom.ls.LSOutput;
 
@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 
 import java.sql.*;
 
+
+//Регистрация - запись в БД
 public class ServletRegistration extends HttpServlet  {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

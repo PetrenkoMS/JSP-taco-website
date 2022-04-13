@@ -1,9 +1,49 @@
-var login="";
+window.onload = function(){
+    $.ajax({
+        type: "GET",
+        url: "/sombrero",
+        success: function(){
+        },
+        error: function(){
+        }
+    });
 
-$('#basket').onclick(function(){
-    if login
-    addproducts();
-} );
+    function getCookie(name) {
+      let match = document.cookie.split('; ').find(row => row.startsWith(`${name}=`));
+
+      return match ? match.split('=')[1] : undefined;
+    }
+
+    var cookies= document.cookie;
+    cookieValue = getCookie("user");
+    console.log("cookiesVal: " + cookieValue);
+    console.log(typeof cookieValue);
+    if (cookieValue) {
+        var vhod = document.getElementById("vhod");
+        vhod.style.display = "none";
+        var vihod = document.getElementById("vihod");
+        var yourLog = document.getElementById("yourLog");
+        vihod.style.display="block";
+        yourLog.style.display="block";
+        yourLog.value = cookieValue;
+
+    }
 
 
-//или через куки   -- 2 хедера: 1 логи, 2 токкен (для проверки). Во всех сервлетах вначале проверять все хеддеры. Если пуст - ошибка 403 и перенаправить в регистрацию
+}
+
+function ext() {
+
+    $.ajax({
+        type: "GET",
+        url: "/ext",
+        success: function(result) {
+            window.location.href="/";
+        },
+            error: function(result) {
+        }
+    });
+
+}
+
+

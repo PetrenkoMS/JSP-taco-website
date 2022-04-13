@@ -43,11 +43,11 @@
             </div>
             <div class="row">
                 <div class="col-8">
-                    <input type="text" readonly="true" class="yourLog" style="display:none; margin-right: 100px">
+                    <input type="text" id="yourLog3" readonly="true" class="yourLog" style="display:none;">
                 </div>
                 <div class="col-4">
-                    <input type="submit" style="display:none; margin-right: 200px" value="Выйти" onclick="ext()" style="text-align:center" class="list-group-item list-group-item-action list-group-item-primary btn btn-large vixod">
-                    <input type="submit" style="display:block; margin-right: 200px;" value="Войти" onclick="location.href='/logOn'" class="list-group-item list-group-item-success btn btn-large btn-success vxod" >
+                    <input type="submit" id="vihod3" style="display:none; margin-right: 200px" value="Выйти" onclick="ext()" style="text-align:center" class="list-group-item list-group-item-action list-group-item-primary btn btn-large vihod">
+                    <input type="submit" id="vhod3" style="display:block; margin-right: 200px;" value="Войти" onclick="location.href='/logOn'" class="list-group-item list-group-item-success btn btn-large btn-success vhod" >
                 </div>
             </div>
         </div>
@@ -92,9 +92,9 @@
             <br>
             <div id='payInfo' class="payNow" style="display:none;">
                 <p style= "font-weight:bold; font-size:24px;"> Введите данные банковской карты </p>
-                <input type="int" name="card_number" pattern=".{3,}" title="Минимум 3 символа" placeholder="Введите номер карты">
-                <input type="text" name="card_name" pattern=".{3,}" title="Минимум 3 символа" placeholder="Имя владельца">
-                <input type="text" name="time_number" pattern=".{3,}" title="Минимум 3 символа" placeholder="Срок действия">
+                <input type="int" id="cart_number" name="card_number" pattern=".{3,}" title="Минимум 3 символа" placeholder="Введите номер карты">
+                <input type="text" id="cart_name" name="card_name" pattern=".{2,}" title="Минимум 3 символа" placeholder="Имя владельца">
+                <input type="text" id="time_number" name="time_number" pattern=".{3,}" title="Минимум 3 символа" placeholder="Срок действия">
                 <div class="row">
                     <div class="col-5"></div>
                     <div class="col-2">
@@ -106,7 +106,7 @@
             <div class="row">
                 <div class="col-5"></div>
                 <div class="col-2" style="text-align:center;">
-                    <input id="sum_pay" type="text" readonly="true" class="sum_pay">
+                    <input id="sum_pay0" type="text" readonly="true" class="sum_pay">
                     <input id="pay" type="submit" value="Оплатить" onclick="pay()" style="display:block;" class="list-group-item list-group-item-success btn btn-large btn-success">
 
                 </div>

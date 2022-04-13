@@ -20,7 +20,11 @@
     </div>
 
     <table border="0" cellspacing="10" cellpadding="2" width="100px" align="center" class="logOnForm">
-        <caption class="capReg"> Вход в систему </caption>
+        <tr>
+            <td colspan="4" style="color:black">
+                <h3> Вход в систему <h3>
+            </td>
+        </tr>
         <tr>
             <th colspan="2">
                 Логин:
@@ -37,9 +41,16 @@
                 <input type="password" id="password" name="password" pattern=".{3,}" title="Минимум 3 символа" placeholder="Введите пароль">
             </td>
         </tr>
+        <tr>
+            <td></td>
+            <td colspan="2">
+                <input type="submit" id="enter" onclick="vhodIn()"  value="Войти">
+            </td>
+            <td></td>
+        </tr>
     </table>
     <div style="margin:10px 50%;">
-        <input type="submit" id="enter" onclick="vhodIn()" value="Войти">
+
     </div>
 
 
@@ -49,30 +60,32 @@
     </div>
 
     <table border="0" cellspacing="10" cellpadding="2" width="100px" align="center" class="logOnForm">
-        <caption class="capReg"> Регистрация </caption>
-            <tr>
-                <th colspan="2">
-                    Логин:
-                </th>
-                <td colspan="2">
-                    <input type="text" id="newLogin" name="newLogin" pattern=".{3,}" title="Минимум 3 символа" placeholder="Введите новый логин">
-                </td>
-            </tr>
-            <tr>
-                <th colspan="2">
-                    Пароль:
-                </th>
-                <td colspan="2">
-                    <input type="password" id="newPassword" name="newPassword" pattern=".{3,}" title="Минимум 3 символа" placeholder="Введите пароль">
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td colspan="2">
-                    <input type="submit" onclick="goRegistr()" value="Зарегистрироваться">
-                </td>
-                <td></td>
-            </tr>
+        <td colspan="4" style="color:black">
+            <h3> Регистрация <h3>
+        </td>
+        <tr>
+            <th colspan="2">
+                Логин:
+            </th>
+            <td colspan="2">
+                <input type="text" id="newLogin" name="newLogin" pattern=".{3,}" title="Минимум 3 символа" placeholder="Введите новый логин">
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                Пароль:
+            </th>
+            <td colspan="2">
+                <input type="password" id="newPassword" name="newPassword" pattern=".{3,}" title="Минимум 3 символа" placeholder="Введите пароль">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2">
+                <input type="submit" onclick="goRegistr()" value="Зарегистрироваться">
+            </td>
+            <td></td>
+        </tr>
     </table>
     <div style="margin:10px 50%">
 

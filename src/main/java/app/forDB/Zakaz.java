@@ -1,6 +1,7 @@
 package app.forDB;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,8 @@ import java.util.stream.Collectors;
 
 import java.sql.*;
 
+
+//читает чекбоксы и записывает в БД заказ и цену
 public class Zakaz extends HttpServlet  {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -59,11 +62,24 @@ public class Zakaz extends HttpServlet  {
              Statement statement = connection.createStatement()) {
             System.out.println("Connect!");
 
+            Cookie[] cookies = req.getCookies();
+            String cookieUser = "user";
+            Cookie cookieUserValue = null;
+            String user = "";
+            for (Cookie c : cookies) {
+                if (cookieUser.equals(c.getName())) {
+                    cookieUserValue = c;
+                    System.out.println();
+                    System.out.println("user cookie: " + cookieUserValue.getValue());
+                    user = cookieUserValue.getValue();
+                }
+            }
+
 //            запись
             PreparedStatement pstmt = null;
             pstmt = connection.prepareStatement(
                     "INSERT INTO product (user_name, product, status, price) values(?, ?, ?, ?)");
-            pstmt.setString(1, "Mikhail");
+            pstmt.setString(1, user);
             pstmt.setString(2, word1);
             pstmt.setInt(3, 1);
             pstmt.setInt(4, pay1);

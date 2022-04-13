@@ -1,6 +1,7 @@
 package app.forDB;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,6 +10,8 @@ import java.util.stream.Collectors;
 
 import java.sql.*;
 
+
+//Удаляет запись -- заказ удаляется
 public class ServletDelBasket extends HttpServlet  {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -20,8 +23,9 @@ public class ServletDelBasket extends HttpServlet  {
 //            System.out.println("s: "+s);
 //        }
 
-        String words = req.getReader().lines().collect(Collectors.joining());
-        System.out.println(words);
+        String id_ids = req.getReader().lines().collect(Collectors.joining());
+        System.out.println(id_ids);
+        int id_id = Integer.parseInt(id_ids);
 
 
 //        JavaToMySQL toDB = new JavaToMySQL();
@@ -48,15 +52,28 @@ public class ServletDelBasket extends HttpServlet  {
         try (Connection connection = DriverManager.getConnection(connectionUrl, userName, password);
                                Statement statement = connection.createStatement()) {
             System.out.println("Connect to del");
+
+            Cookie[] cookies = req.getCookies();
+            String cookieUser = "user";
+            Cookie cookieUserValue = null;
+            String user = "";
+            for (Cookie c : cookies) {
+                if (cookieUser.equals(c.getName())) {
+                    cookieUserValue = c;
+                    System.out.println();
+                    System.out.println("user cookie: " + cookieUserValue.getValue());
+                    user = cookieUserValue.getValue();
+                }
+            }
+
             //            запись
             PreparedStatement pstmt = null;
-            pstmt = connection.prepareStatement("Delete from product where user_name='Mikhail' and product= ? and status= ?");
+            pstmt = connection.prepareStatement("Delete from product where id = ?");
 //            pstmt = connection.prepareStatement(
 //                    "CREATE TABLE t_temp as SELECT * FROM product Where user_name='Mikhail' and product= ? ;" + "\n" +
 //                            "Select count(*) from taco.t_temp;");
 
-            pstmt.setString(1, words);
-            pstmt.setInt(2,1);
+            pstmt.setInt(1,id_id);
             System.out.println(pstmt);
             pstmt.executeUpdate();
         }

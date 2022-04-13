@@ -1,6 +1,8 @@
 package app.forDB;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,6 +10,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.stream.Collectors;
 
+//Авторизация и куки
 public class ServletInLog extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,6 +27,7 @@ public class ServletInLog extends HttpServlet {
 
         String login=s[0];
         String pass=s[1];
+        String sait = "";
 
 
         String userName = "root";
@@ -58,12 +62,38 @@ public class ServletInLog extends HttpServlet {
 
             if (logFlag) {
 
+                resp.addCookie(new Cookie("user", login));
 
-                System.out.println("-------------------");
+                Cookie[] cookies = req.getCookies();
+                String cookieSait = "sait";
+                Cookie cookieSaitValue = null;
+
+                for (Cookie c : cookies) {
+                    if (cookieSait.equals(c.getName())) {
+                        cookieSaitValue = c;
+                        System.out.println();
+                        System.out.println("sait cookie: " + cookieSaitValue.getValue());
+                        sait = cookieSaitValue.getValue();
+                    }
+                }
+
+                if (sait != null) {
+                    RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
+                    requestDispatcher.forward(req, resp);
+                }
+
+
+                System.out.println("-user-");
+
+
+
             }
             else {
                 resp.sendError(500,"Неверно введен логин или пароль");
             }
+
+
+
 
             System.out.println("-------------------");
 
