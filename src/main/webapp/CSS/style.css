@@ -1,5 +1,6 @@
 body {
     background-image: url("../img/фон тако.png");
+
 }
 
 @font-face {
@@ -20,10 +21,51 @@ body {
     padding-right:10px;
 }
 
-
 .navi {
     font-size: 20px;
     background-color: #FFCF40;
     margin-bottom: -15px;
     margin-top: -10px;
+}
+
+.divider{
+    margin-top: 10px;
+    background-image: url("../img/razdel.png");
+    background-repeat: repeat-x;
+    height:30px;
+    width:100%;
+}
+
+/*------------------------*/
+
+#heading, #discount, #hit, #about{
+    text-align:center;
+    padding: 50px 0px;
+    padding-bottom: 20px;
+    background: #ECEBE9;
+}
+
+#about p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#about div.row{
+    padding: 50px 0px;
+}
+
+
+
+footer{
+    background-image: url("../img/footer1.jpg");
+    color: #D0D0D0;
+    padding-top:20px;
+}
+
+.fcol5 {
+    text-align: justify;
+}
+
+.footer-icons {
+    text-align: center;
 }

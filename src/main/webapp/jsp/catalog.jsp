@@ -40,10 +40,10 @@
             <div class="navbar-collapse collapse"> <!--Меню сворачивается в выпадающий btn-->
                 <ul class="navbar-nav"> <!--меню, которое будет придвинуто к правой стороне -->
                     <li class="nav-item"><a onclick="location.href='/catalog'" class="nav-link nav_li">Каталог</a></li>
-                    <li class="nav-item"><a href="#hit" class="nav-link nav_li">Хит продаж</a></li>
-                    <li class="nav-item"><a href="#discount" class="nav-link nav_li">Акции</a></li>
+
+
                     <li class="nav-item"><a onclick="location.href='/basket'" class="nav-link nav_li">Корзина</a></li>
-                    <li class="nav-item"><a href="#info" class="nav-link nav_li">О нас</a></li>
+
                 </ul>
             </div>
 

@@ -1,4 +1,3 @@
-
 function addProducts() {
     var temp = $('#text_input').val();
     $.ajax({
@@ -7,6 +6,13 @@ function addProducts() {
         data: temp,
         success: function(){
             alert('Заказ успешно сформирован');
+//            var inputArr=document.querySelectorAll("input[type=checkbox]");
+//            inputArr.forEach(function(el) {
+//                el.checked = false;
+//            });
+//            var corni = document.getElementById("corn");
+//            corni.checked = true;
+            window.location.reload();
         },
         error: function(){
             alert('Что-то пошло не так');
