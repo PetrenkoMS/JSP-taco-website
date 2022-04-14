@@ -12,7 +12,6 @@
     <title>Vamos Tacos! Vamos Tacos!</title>
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-
 </head>
 <body>
     <!--Меню -->
@@ -31,7 +30,6 @@
                     <li class="nav-item"><a href="#info" class="nav-link nav_li">О нас</a></li>
                 </ul>
             </div>
-
             <div class="row">
                 <div class="col-8">
                     <input type="text" id="yourLog" readonly="true" class="yourLog" style="display:none;">
@@ -39,14 +37,11 @@
                 <div class="col-4">
                     <input type="submit" id="vihod"  style="display:none; margin-right: 200px" value="Выйти" onclick="ext()" style="text-align:center" class="list-group-item list-group-item-action list-group-item-primary btn btn-large vihod">
                     <input type="submit" id="vhod" style="display:block; margin-right: 200px;" value="Войти" onclick="location.href='/logOn'" class="list-group-item list-group-item-success btn btn-large btn-success vhod" >
-
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!-- header -->
     <div>
     <br><br><br><br>
     </div>
@@ -80,7 +75,6 @@
                 <h1 > Акции </h1>
                 <p class="lead" style="font-size:24px;"> Все любят акции и скидки. Здесь будут проявлять выгодные предложения и другие разные акции. </p>
             </div>
-
         </div>
     </div>
 
@@ -115,7 +109,6 @@
             </div>
         </div>
     </footer>
-
 
     <script src="js/main.js"></script>
     <script src="js/vxod.js"></script>

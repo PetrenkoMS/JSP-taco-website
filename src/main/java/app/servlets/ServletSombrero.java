@@ -11,10 +11,6 @@ import java.io.IOException;
 public class ServletSombrero extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        System.out.println("main start");
         resp.addCookie(new Cookie("sait", "main"));
-
-
     }
 }

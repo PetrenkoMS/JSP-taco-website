@@ -14,16 +14,11 @@ import java.util.stream.Collectors;
 public class ServletStatus extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
         String words = req.getReader().lines().collect(Collectors.joining());
-        System.out.println(words);
-
 
         String userName = "root";
         String password = "qwerty123!";
         String connectionUrl="jdbc:mysql://localhost:3306/taco";
-
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -40,20 +35,13 @@ public class ServletStatus extends HttpServlet {
             for (Cookie c : cookies) {
                 if (cookieUser.equals(c.getName())) {
                     cookieUserValue = c;
-                    System.out.println();
-                    System.out.println("user cookie: " + cookieUserValue.getValue());
                     user = cookieUserValue.getValue();
                 }
             }
-
-
-            //            запись
+            //запись
             PreparedStatement pstmt = null;
             pstmt = connection.prepareStatement("Update product set status = 0 where user_name = ? and status = 1");
-
             pstmt.setString(1, user);
-
-            System.out.println(pstmt);
             pstmt.executeUpdate();
         }
         catch (SQLException e) {

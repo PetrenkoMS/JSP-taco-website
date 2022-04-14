@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="JSP2" />
         <module name="JSP" />
+        <module name="Taco" />
       </profile>
     </annotationProcessing>
   </component>

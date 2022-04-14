@@ -14,6 +14,5 @@ public class ServletExt extends HttpServlet {
         Cookie cookie = new Cookie("user", "");
         cookie.setMaxAge(0);
         resp.addCookie(cookie);
-
     }
 }

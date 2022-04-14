@@ -18,7 +18,6 @@ public class PrintBasket extends HttpServlet {
         String userName = "root";
         String password = "qwerty123!";
         String connectionUrl = "jdbc:mysql://localhost:3306/taco";
-
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -35,16 +34,12 @@ public class PrintBasket extends HttpServlet {
             for (Cookie c : cookies) {
                 if (cookieUser.equals(c.getName())) {
                     cookieUserValue = c;
-                    System.out.println();
-                    System.out.println("user cookie: " + cookieUserValue.getValue());
                     user = cookieUserValue.getValue();
                 }
             }
 
-            String prod = "";
             //чтение
-//            ResultSet resultSet = statement.executeQuery("select product from product where user_name='Mikhail'");
-
+            String prod = "";
             PreparedStatement pstmt = null;
             pstmt = connection.prepareStatement("select id, product, price from product where user_name= ? and status= ? ");
             pstmt.setString(1,user);
@@ -71,15 +66,11 @@ public class PrintBasket extends HttpServlet {
                 all_id += Integer.toString(id_id) + ";";
             }
 
-//            response.setCharacterEncoding("UTF-8");
-//            response.getWriter().write(prod);
             String namepr = all_prod + "%" + all_price + "|" + price_sum + "|" + all_id;
             response.getWriter().write(namepr);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
     }
 }

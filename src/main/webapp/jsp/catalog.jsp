@@ -8,24 +8,20 @@
     <link rel="stylesheet" href="../CSS/css/bootstrap.css">
     <link rel="stylesheet" href="../CSS/catalogStyle.css">
 
-
     <title>Каталог</title>
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-
     <script>
-
-    jQuery(function($) {
-        var $text = $('#text_input'), $box = $('.prod');
-        $box.on('click change', function() {
-            var values = [];
-            $box.filter(':checked').each(function() {
-                values.push(this.value);
+        jQuery(function($) {
+            var $text = $('#text_input'), $box = $('.prod');
+            $box.on('click change', function() {
+                var values = [];
+                $box.filter(':checked').each(function() {
+                    values.push(this.value);
+                });
+                $text.val(values.join(','));
             });
-            $text.val(values.join(','));
         });
-    });
-
     </script>
 
 </head>
@@ -40,13 +36,9 @@
             <div class="navbar-collapse collapse"> <!--Меню сворачивается в выпадающий btn-->
                 <ul class="navbar-nav"> <!--меню, которое будет придвинуто к правой стороне -->
                     <li class="nav-item"><a onclick="location.href='/catalog'" class="nav-link nav_li">Каталог</a></li>
-
-
                     <li class="nav-item"><a onclick="location.href='/basket'" class="nav-link nav_li">Корзина</a></li>
-
                 </ul>
             </div>
-
             <div class="row">
                 <div class="col-8">
                     <input type="text" id="yourLog2" readonly="true" class="yourLog" style="display:none; background-color = grey;">
@@ -54,15 +46,11 @@
                 <div class="col-4">
                     <input type="submit" id="vihod2" style="display:none; margin-right: 200px" value="Выйти" onclick="ext()" style="text-align:center" class="list-group-item list-group-item-action list-group-item-primary btn btn-large vixod">
                     <input type="submit" id="vhod2" style="display:block; margin-right: 200px;" value="Войти" onclick="location.href='/logOn'" class="list-group-item list-group-item-success btn btn-large btn-success vxod" >
-
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!--Заголовок-->
-    <!--<form action="BtnServlet" method="GET"> -->
     <div class="container">
         <div class="row">
             <div class="col-1"></div>
@@ -79,9 +67,7 @@
             </div>
             <div class="col-1"></div>
 
-
             <div class="divider"></div>
-
 
             <fieldset>
                 <legend>В какой тортилье делать?</legend>
@@ -90,16 +76,12 @@
                 <input type="radio" name="tortilia" id="wheat" value="Wheat tortilla%50" class="prod"> Пшеничная тортилья
             </fieldset>
 
-
             <div class="divider"></div>
-
             <input  id="text_input" name="text_input" type="hidden" />
-
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-4">
                     <table border="2" cellspacing="0" cellpadding="2" width="100%" align="center" class="spisok">
-
                         <tr>
                            <td> Курица </td>
                            <td> <input type="text" name="pchoice" id="pchicken"  class="pprod" value="100rub" readonly> </td>
@@ -165,7 +147,6 @@
                            <td><input type="text" name="pchoice" id="ptomato" value="25rub" class="pprod" readonly></td>
                            <td><input type="checkbox" name="choice" id="tomato" value="Tomato%25" class="prod"></td>
                         </tr>
-
                     </table>
                 </div>
                 <div class="col-2"></div>
@@ -241,7 +222,6 @@
                     </table>
                 </div>
                 <div class="col-1"></div>
-
             </div>
             <br>
             <div class="row">
@@ -252,16 +232,10 @@
                 <div class="col-5"></div>
             </div>
         </div>
-
-
     </div>
-    <!--</form>-->
-
-
 
     <script src="../js/ingr.js"></script>
     <script src="../js/js/bootstrap.js"></script>
 
 </body>
-
 </html>

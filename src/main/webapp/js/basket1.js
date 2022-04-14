@@ -15,7 +15,6 @@ function deleteProduct(obj) {
             alert('Что-то пошло не так');
         }
     });
-
 };
 
 function pay() {
@@ -55,22 +54,16 @@ function payNow() {
                 }
             });
         }
-
         else {
             alert('Введите, пожалуйста, корректные данные');
         }
-
     }
     else {
         alert("Вы ничего не заказали");
     }
-
 }
 
-
 window.onload = function() {
-
-
     var producti = new Array();
     var allprod = new Array();
     $.ajax({
@@ -93,8 +86,6 @@ window.onload = function() {
                 input.setAttribute('value', producti[i]);
                 input.className = i +"btn"+" new_inputs" + " forStatus" ;
 
-
-
                 pinput.setAttribute('type', 'text');
                 pinput.setAttribute("readonly", 'true');
                 pinput.setAttribute('value', cena[i]);
@@ -104,28 +95,22 @@ window.onload = function() {
                 btn.setAttribute('value'," ");
                 btn.setAttribute('id', id_id[i]);
                 btn.className = i + "btn" + " new_btn";
-                //                    btn.setAttribute("onclick",'window.location.reload()');
                 btn.setAttribute("onclick",'deleteProduct(this)');
+
                 var parent = document.getElementById("spisok_basket");
                 parent.appendChild(input);
                 parent.appendChild(pinput);
                 parent.appendChild(btn);
                 parent.appendChild(br);
-
             }
             var itog = "Итого: " + withAllPrice[1] + " rub";
             $('#sum_pay0').val(itog);
-//            document.getElementById("sum_pay0").value = itog;
-
             function getCookie(name) {
                     let match = document.cookie.split('; ').find(row => row.startsWith(`${name}=`));
                     return match ? match.split('=')[1] : undefined;
                 }
-
                 var cookies= document.cookie;
                 cookieValue = getCookie("user");
-                console.log("cookiesVal: " + cookieValue);
-                console.log(typeof cookieValue);
                 if (cookieValue) {
                     var vhod = document.getElementById("vhod3");
                     vhod.style.display = "none";
@@ -135,7 +120,6 @@ window.onload = function() {
                     yourLog.style.display="block";
                     yourLog.value = cookieValue;
                 }
-
         },
         error: function(){
             alert('Что-то пошло не так');
@@ -144,7 +128,6 @@ window.onload = function() {
 };
 
 function ext() {
-
     $.ajax({
         type: "GET",
         url: "/ext",
@@ -154,7 +137,6 @@ function ext() {
             error: function(result) {
         }
     });
-
 }
 
 

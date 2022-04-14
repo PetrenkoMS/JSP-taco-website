@@ -11,11 +11,6 @@
     <title>Каталог</title>
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-
-
-
-
-<!-- последний скрипт видит все -->
     <script>
         function testFunction() {
             var x = document.getElementById("testInput").value;
@@ -35,9 +30,7 @@
             <div class="navbar-collapse collapse"> <!--Меню сворачивается в выпадающий btn-->
                 <ul class="navbar-nav"> <!--меню, которое будет придвинуто к правой стороне -->
                     <li class="nav-item"><a onclick="location.href='/catalog'" class="nav-link nav_li">Каталог</a></li>
-
                     <li class="nav-item"><a onclick="location.href='/basket'" class="nav-link nav_li">Корзина</a></li>
-
                 </ul>
             </div>
             <div class="row">
@@ -52,8 +45,6 @@
         </div>
     </div>
 
-
-    <!--Заголовок-->
     <div class="container">
         <div class="row">
             <div class="col-1"></div>
@@ -66,29 +57,22 @@
             </div>
             <div class="col-1"></div>
 
-
             <div class="divider"></div>
-
 
             <h3> Ваш заказ </h3>
             <div class="row">
                 <div class="col-1"></div>
                 <div class="col-10" id="spisok_basket">
                     <table border="2" cellspacing="0" cellpadding="2" width="100%" align="center" class="spisok">
-
                         <tr>
-
                             <p id = "info" ></p>
-
                         </tr>
-
-
                     </table>
                 </div>
                 <div class="col-1"></div>
-
             </div>
             <br>
+
             <div id='payInfo' class="payNow" style="display:none;">
                 <p style= "font-weight:bold; font-size:24px;"> Введите данные банковской карты </p>
                 <input type="int" id="cart_number" name="card_number" pattern=".{3,}" title="Минимум 3 символа" placeholder="Введите номер карты">
@@ -107,15 +91,11 @@
                 <div class="col-2" style="text-align:center;">
                     <input id="sum_pay0" type="text" readonly="true" class="sum_pay">
                     <input id="pay" type="submit" value="Оплатить" onclick="pay()" style="display:block;" class="list-group-item list-group-item-success btn btn-large btn-success">
-
                 </div>
                 <div class="col-5"></div>
             </div>
         </div>
-
-
     </div>
-
 
     <script src="../js/basket1.js"></script>
     <script src="../js/js/bootstrap.js"></script>

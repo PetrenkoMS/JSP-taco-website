@@ -9,16 +9,13 @@
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-
    <title>Войти</title>
 </head>
 <body>
-
     <div class="container noLog">
             <p>Просматривать сайт могут только зарегистрированные пользователи </p>
             <p>Авторизуетесь на сайте по форме ниже </p>
     </div>
-
     <table border="0" cellspacing="10" cellpadding="2" width="100px" align="center" class="logOnForm">
         <tr>
             <td colspan="4" style="color:black">
@@ -50,13 +47,13 @@
         </tr>
     </table>
     <div style="margin:10px 50%;">
-
     </div>
-
 
     <div class="container noLog">
         <p>Вы ещё не зарегистрированы на данном сайте? </p>
         <p>Тогда зарегистрируйтесь, используя форму ниже </p>
+        <p> Логин и пароль должны содержать больше 3-х символов, быть нна английском языке и/или содержать цифры,
+        и не содержать специальные символы &lt; &gt; &frasl; &quot; &prime; , ; | \ <p>
     </div>
 
     <table border="0" cellspacing="10" cellpadding="2" width="100px" align="center" class="logOnForm">
@@ -87,9 +84,7 @@
             <td></td>
         </tr>
     </table>
-    <div style="margin:10px 50%">
-
-    </div>
+    <div style="margin:10px 50%"></div>
 
     <script src="../js/registration.js"> </script>
     <script src="../js/vxod.js"></script>

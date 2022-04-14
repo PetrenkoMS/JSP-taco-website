@@ -15,7 +15,6 @@ public class BasketServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         Cookie[] cookies = req.getCookies();
         String cookieLogOn = "user";
         Cookie cookieLogOnValue = null;
@@ -23,13 +22,9 @@ public class BasketServlet extends HttpServlet {
             for (Cookie c : cookies) {
                 if (cookieLogOn.equals(c.getName())) {
                     cookieLogOnValue = c;
-                    System.out.println();
-                    System.out.println("c " + cookieLogOnValue.getValue());
-
                 }
             }
         }
-
         String cookieSait = "sait";
         resp.addCookie(new Cookie("sait", "basket"));
 
@@ -40,7 +35,5 @@ public class BasketServlet extends HttpServlet {
             RequestDispatcher requestDispatcher1 = req.getRequestDispatcher("jsp/logOn.jsp");
             requestDispatcher1.forward(req, resp);
         }
-
     }
-
 }
